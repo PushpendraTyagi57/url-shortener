@@ -67,7 +67,7 @@ def shorten_url(request: Request, body: ShortenRequest, db: Session = Depends(ge
     redis_client.setex(url_entry.short_code, 604800, long_url)
 
     return ShortenResponse(
-        short_url=f"{BASE_URL}/{url_entry.short_code}",
+        short_url=f"{BASE_URL.rstrip('/')}/{url_entry.short_code}",
         short_code=url_entry.short_code,
         long_url=long_url,
     )
