@@ -1,4 +1,4 @@
-# ⚡ URL Shortener
+#  URL Shortener
 
 A production-ready URL shortener REST API built with **FastAPI**, **PostgreSQL**, and **Redis** — designed for performance, scalability, and simplicity.
 
@@ -6,7 +6,7 @@ A production-ready URL shortener REST API built with **FastAPI**, **PostgreSQL**
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -18,7 +18,7 @@ A production-ready URL shortener REST API built with **FastAPI**, **PostgreSQL**
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Base62 Encoding** — Auto-incremented IDs converted to short codes (e.g. `100` → `1C`). Zero collision risk by design, supports 56 billion unique URLs before reaching 6 characters
 - **Redis Caching** — Hot URLs served from memory. Repeat redirects never touch the database
@@ -28,7 +28,7 @@ A production-ready URL shortener REST API built with **FastAPI**, **PostgreSQL**
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### `POST /shorten`
 Shorten a long URL.
@@ -75,7 +75,7 @@ Returns analytics for a short URL.
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 ### Shortening Flow
 ```
@@ -105,7 +105,7 @@ GET /1C
 
 ---
 
-## 📊 Performance
+##  Performance
 
 Load tested with [Locust](https://locust.io) — 50 concurrent users against the live Railway deployment:
 
@@ -121,7 +121,7 @@ Load tested with [Locust](https://locust.io) — 50 concurrent users against the
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 url-shortener/
@@ -137,7 +137,7 @@ url-shortener/
 
 ---
 
-## 🏃 Run Locally
+##  Run Locally
 
 ### Option 1 — Docker Compose (recommended)
 ```bash
@@ -164,7 +164,7 @@ uvicorn main:app --reload
 
 ---
 
-## 📈 Scalability Design
+##  Scalability Design
 
 This project is intentionally designed to scale horizontally:
 
@@ -175,7 +175,7 @@ This project is intentionally designed to scale horizontally:
 
 ---
 
-## 🔧 Environment Variables
+##  Environment Variables
 
 | Variable | Description | Default |
 |---|---|---|
