@@ -56,6 +56,15 @@ class ShortenResponse(BaseModel):
 def shorten_url(request: Request, body: ShortenRequest, db: Session = Depends(get_db)):
     long_url = str(body.long_url)
 
+    # Check if URL already exists
+    existing = db.query(URL).filter(URL.long_url == long_url).first()
+    if existing:
+        return ShortenResponse(
+            short_url=f"{BASE_URL.rstrip('/')}/{existing.short_code}",
+            short_code=existing.short_code,
+            long_url=existing.long_url,
+        )
+
     url_entry = URL(long_url=long_url, short_code="pending")
     db.add(url_entry)
     db.flush()
